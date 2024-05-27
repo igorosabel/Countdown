@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { LoginResult } from '@interfaces/interfaces';
+import { LoginResult } from '@interfaces/user.interfaces';
 import User from '@model/user.model';
 import ClassMapperService from '@services/class-mapper.service';
 

@@ -1,4 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: #282929;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.card-center {
+    width: 90%;
+    margin: 5%;
+}
+
+.card-actions-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mat-mdc-card-header-text {
+    width: 100%;
+}
+
+.mat-mdc-card-title {
+    color: var(--mat-toolbar-container-text-color);
+    display: flex !important;
+
+    span {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+}
+
+.mat-mdc-card-content {
+    color: var(--mat-toolbar-container-text-color);
+}
+
+.field-error {
+    display: block;
+    color: var(--mat-form-field-error-text-color);
+}
+
+.icon-img {
+    width: 24px;
+}
+
+.fab-bottom-right {
+    position: fixed !important;
+    bottom: 16px;
+    right: 16px;
+}
+
+@media screen and (min-width: 1024px) {
+    .card-center {
+        width: 50%;
+        margin: 5% 25%;
+    }
+}

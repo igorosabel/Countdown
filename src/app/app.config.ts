@@ -1,5 +1,9 @@
 import { registerLocaleData } from '@angular/common';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptors,
+} from '@angular/common/http';
 import es from '@angular/common/locales/es';
 import {
   ApplicationConfig,
@@ -46,6 +50,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(
+      withFetch(),
       withInterceptors([TokenInterceptor, ResponseInterceptor])
     ),
     provideAnimationsAsync(),

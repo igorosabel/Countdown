@@ -1,1 +1,58 @@
-<p>login works!</p>
+<mat-toolbar color="primary">
+    <span>Countdown</span>
+</mat-toolbar>
+
+<form (ngSubmit)="checkForm()">
+    <mat-card class="card-center">
+        <mat-card-header>
+            <mat-card-title>Iniciar sesión</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="login-form">
+                <mat-form-field>
+                    <mat-label>Usuario</mat-label>
+                    <input matInput
+                           [(ngModel)]="loginData.username"
+                           name="name"
+                           autocorrect="off"
+                           autocapitalize="off"
+                           autocomplete="username"
+                           required>
+                    @if (validation.username) {
+                    <mat-hint class="field-error">El nombre de usuario es obligatorio.</mat-hint>
+                    }
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput
+                           [(ngModel)]="loginData.pass"
+                           name="pass"
+                           type="password"
+                           autocomplete="current-password"
+                           required>
+                    @if (validation.pass) {
+                    <mat-hint class="field-error">La contraseña es obligatoria.</mat-hint>
+                    }
+                </mat-form-field>
+            </div>
+        </mat-card-content>
+        <mat-card-actions class="card-actions-space-between">
+            <button mat-raised-button
+                    color="primary"
+                    type="button"
+                    routerLink="/register">Registro</button>
+            <button mat-raised-button
+                    color="primary"
+                    [disabled]="loading()">
+                @if (loading()) {
+                <img src="loading.svg"
+                     alt="Cargando..."
+                     class="icon-img">
+                }
+                @else {
+                Continuar
+                }
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</form>
