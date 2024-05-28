@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { environment } from '@env/environment';
+import { CountdownsResult } from '@interfaces/countdown.interfaces';
 import {
   LoginData,
   LoginResult,
@@ -19,5 +20,9 @@ export default class ApiService {
 
   login(data: LoginData): Observable<LoginResult> {
     return this.http.post<LoginResult>(this.apiUrl + 'login', data);
+  }
+
+  getCountdowns(): Observable<CountdownsResult> {
+    return this.http.post<CountdownsResult>(this.apiUrl + 'get-countdowns', {});
   }
 }

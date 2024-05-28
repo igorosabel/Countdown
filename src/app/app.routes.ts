@@ -11,9 +11,4 @@ export const routes: Routes = [
     loadComponent: () => import('@pages/home/home.component'),
     canActivate: [isLoggedGuardFn],
   },
-  {
-    path: 'add',
-    loadComponent: () => import('@pages/add/add.component'),
-    canActivate: [isLoggedGuardFn],
-  },
 ];

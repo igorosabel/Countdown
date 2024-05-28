@@ -1,1 +1,17 @@
-<p>home works!</p>
+<cd-sidenav #sidenav>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <button mat-icon-button
+                    (click)="toggleSidenav()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <span class="spacer">Countdown</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <button mat-fab
+            class="fab-bottom-right"
+            routerLink="/add">
+        <mat-icon>add</mat-icon>
+    </button>
+</cd-sidenav>
