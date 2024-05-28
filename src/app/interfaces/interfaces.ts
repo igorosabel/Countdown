@@ -12,3 +12,7 @@ export interface DialogOptions {
   ok?: string | undefined;
   cancel?: string | undefined;
 }
+
+export interface StatusResult {
+  status: string;
+}

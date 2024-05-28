@@ -1,5 +1,5 @@
 export interface Modal {
-  modalColor: 'blue' | 'yellow' | 'red';
+  modalColor: 'main' | 'yellow' | 'red';
   modalTitle: string;
   css?: string;
   contentCss?: string;

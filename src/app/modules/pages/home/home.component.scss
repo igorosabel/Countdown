@@ -1,0 +1,26 @@
+.item {
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--mdc-dialog-supporting-text-color, rgba(0, 0, 0, 0.6));
+    position: relative;
+
+    &:last-child {
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .time {
+        font-size: 32px;
+        margin-top: 8px;
+        padding: 8px;
+    }
+
+    .delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

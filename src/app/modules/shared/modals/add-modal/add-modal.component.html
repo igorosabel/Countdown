@@ -1,1 +1,66 @@
-<p>add-modal works!</p>
+<div class="row">
+    <mat-form-field class="full-width">
+        <mat-label>Fecha</mat-label>
+        <input matInput
+               [matDatepicker]="picker"
+               [(ngModel)]="endDate">
+        <mat-datepicker-toggle matSuffix
+                               [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        @if (validation.date) {
+        <mat-hint class="field-error">La fecha es obligatoria.</mat-hint>
+        }
+    </mat-form-field>
+</div>
+<div class="row">
+    <div class="col">
+        <mat-form-field class="full-width">
+            <mat-label>Hora</mat-label>
+            <input matInput
+                   type="number"
+                   min="0"
+                   max="23"
+                   step="1"
+                   [(ngModel)]="hour">
+            @if (validation.hour) {
+            <mat-hint class="field-error">La hora es obligatoria.</mat-hint>
+            }
+            @if (validation.hourInvalid) {
+            <mat-hint class="field-error">La hora tiene que ser entre 0 y 23.</mat-hint>
+            }
+        </mat-form-field>
+    </div>
+    <div class="col">
+        <mat-form-field class="full-width">
+            <mat-label>Minutos</mat-label>
+            <input matInput
+                   type="number"
+                   min="0"
+                   max="59"
+                   step="1"
+                   [(ngModel)]="minutes">
+            @if (validation.minutes) {
+            <mat-hint class="field-error">Los minutos son obligatorios.</mat-hint>
+            }
+            @if (validation.minutesInvalid) {
+            <mat-hint class="field-error">Los minutos tienen que ser entre 0 y 59.</mat-hint>
+            }
+        </mat-form-field>
+    </div>
+</div>
+<div class="save">
+    <button mat-raised-button
+            color="primary"
+            (click)="save()"
+            [disabled]="loading()">
+        @if (loading()) {
+        <img src="loading.svg"
+             alt="Cargando..."
+             class="icon-img">
+        Cargando...
+        }
+        @else {
+        Añadir
+        }
+    </button>
+</div>

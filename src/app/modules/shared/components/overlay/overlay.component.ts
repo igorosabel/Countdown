@@ -13,7 +13,7 @@ import CustomOverlayRef from '@model/custom-overlay-ref.model';
 })
 export default class OverlayComponent implements OnInit {
   content: Type<any> = this.customOverlayRef.content;
-  inputData: Modal = { modalTitle: '', modalColor: 'blue' };
+  inputData: Modal = { modalTitle: '', modalColor: 'main' };
 
   constructor(
     private customOverlayRef: CustomOverlayRef<any, Modal>,

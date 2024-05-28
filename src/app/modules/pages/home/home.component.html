@@ -6,12 +6,40 @@
                 <mat-icon>menu</mat-icon>
             </button>
             <span class="spacer">Countdown</span>
+            <button mat-icon-button
+                    (click)="showEdit()">
+                @if (!edit()) {
+                <mat-icon>edit</mat-icon>
+                }
+                @else {
+                <mat-icon>close</mat-icon>
+                }
+            </button>
         </mat-toolbar-row>
     </mat-toolbar>
 
+    <mat-card class="card-center">
+        <mat-card-content>
+            @for (item of list(); track item.id) {
+            <div class="item">
+                <div class="title">{{item.endDateStr}}</div>
+                <div class="time">{{item.remaining}}</div>
+                @if (edit()) {
+                <div class="delete">
+                    <button mat-icon-button
+                            (click)="deleteCountdown(item)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+                }
+            </div>
+            }
+        </mat-card-content>
+    </mat-card>
+
     <button mat-fab
             class="fab-bottom-right"
-            routerLink="/add">
+            (click)="add()">
         <mat-icon>add</mat-icon>
     </button>
 </cd-sidenav>

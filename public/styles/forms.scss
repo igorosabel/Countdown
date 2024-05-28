@@ -1,0 +1,23 @@
+.row {
+    min-width: 500px;
+    display: flex !important;
+
+    &>label {
+        display: block;
+        margin-right: 16px;
+    }
+
+    .col {
+        flex: 1;
+        margin-right: 8px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.save {
+    display: flex;
+    justify-content: flex-end;
+}
